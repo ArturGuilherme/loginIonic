@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro de Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="fGroup">
+
+    <ion-item>
+      <ion-label position="floating">Nome Completo</ion-label>
+      <ion-input formControlName="nomeCompleto" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" >Data de Nascimento</ion-label>
+      <ion-datetime formControlName="dataNasc" display-format="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" >Email</ion-label>
+      <ion-input  formControlName="email" pattern="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" >Senha</ion-label>
+      <ion-input formControlName="senha" pattern="password" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" >Comfirmação</ion-label>
+      <ion-input formControlName="contraSenha" pattern="password" type="password"></ion-input>
+    </ion-item>
+
+  </form>
+
+  <ion-button expand="full" shape="round" color="primary" type="submit" (click)="cadastrar()">Cadastrar</ion-button>
+
+</ion-content>
